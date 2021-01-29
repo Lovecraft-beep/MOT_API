@@ -13,7 +13,7 @@ count = 0
 # Your API Key Goes Here
 headers = {
 	'Accept': 'application/json+v6',
-	'x-api-key': 'xxx HERE xxx',
+	'x-api-key': 'ihadtotakeitoutordavejohnsonwouldhavekilledme',
 }
 
 # Set up output csv
@@ -25,6 +25,7 @@ with open('TestOutput.csv', 'w', newline='') as f:
 # Open the source CSV file    
 with open('vrms.csv', newline='') as csvfile:
     vrmreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+
     for row in vrmreader:
         vrm = (', '.join(row))
 
@@ -80,6 +81,9 @@ with open('vrms.csv', newline='') as csvfile:
                 with open('TestOutput.csv', 'a', newline='') as f:
                     thewriter = csv.DictWriter(f, fieldnames = fieldnames)
                     thewriter.writerow(deets_dict)
+
+                
+                print(count,' - VRM:',reg, 'Valid:',valid, 'Make:',make, 'Model:', model, 'Colour:', colour,'Fuel:', fuel, 'Engine Size:', engsize, 'Date Registered:', registered)
 
 # Extract MOT Test details             
                 try:
