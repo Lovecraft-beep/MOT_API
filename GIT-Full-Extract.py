@@ -122,7 +122,7 @@ while count <= 75000:
                 conn.commit()
 
     # Echo something to look at
-                print(reg,' processed.')
+                print(page_cnt, reg, make, model,' processed.')
                     
     # Extract MOT Test details             
                 try:
